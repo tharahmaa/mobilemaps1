@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#1E3E62"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Kolom Lokasi Asal -->
+    <EditText
+        android:id="@+id/origin_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Lokasi Awal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A0A0A0"
+        android:textColorHighlight="#1E3E62"
+        android:textCursorDrawable="@drawable/cursor"
+        android:padding="10dp"
+        android:background="@drawable/edittext_background"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Kolom Lokasi Tujuan -->
+    <EditText
+        android:id="@+id/destination_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Tujuan"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A0A0A0"
+        android:textColorHighlight="#1E3E62"
+        android:textCursorDrawable="@drawable/cursor"
+        android:padding="10dp"
+        android:background="@drawable/edittext_background"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/origin_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Tombol Cari -->
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cari"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF6500"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/destination_input"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- TextView untuk Jarak -->
+    <TextView
+        android:id="@+id/distance_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:text="Jarak Lokasi"
+        android:padding="10dp"
+        android:paddingBottom="30dp"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/search_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance_text" />
+
+    <Spinner
+        android:id="@+id/map_type_spinner"
+        android:background="@drawable/spinner_background"
+        android:textColor="#FFFFFF"
+        android:popupBackground="#1E3E62"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
